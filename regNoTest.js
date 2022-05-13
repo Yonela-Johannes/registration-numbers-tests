@@ -11,7 +11,7 @@ const RegistrationNo = () => {
     const getRegNumber = () => number
     // Test Input string using Regex
     const validateRegistrationNr = number => {
-        const regex = /\b[a-zA-Z]{1,2}(\s|\-)\d{2,3}((\-|\s)?\d{2,4})?\b/
+        const regex = /[a-zA-Z]{1,2}\s[0-9]{2,5}(\s|\-)?([0-9]{2,3})?[a-zA-Z]?/
         return regex.test(number)
     }
     // Check if new number exist of not
@@ -29,7 +29,7 @@ const RegistrationNo = () => {
     }
     // Get registration by town names
     const setTownReg = (string, array) => {
-        string ? selectedTownReg = array.filter(arr => arr.trim().startsWith(string)): ''
+        string ? selectedTownReg = array.filter(arr => arr.trim().startsWith(string)) : ''
     }
     const getTownReg = () => selectedTownReg
 
